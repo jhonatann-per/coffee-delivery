@@ -7,9 +7,7 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
-    padding: 1rem;
-    color: white;
+    
     margin: 0 auto;
     border-bottom: 1px solid white;
 `;
@@ -19,7 +17,7 @@ export const Aside = styled.aside`
     gap: 12px;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+   
     
     div {
         display: flex;

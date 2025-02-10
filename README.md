@@ -12,4 +12,6 @@ npm install
 npm install styled-components
 npm install react-router-dom
 npm install @phosphor-icons/react
+npm install -g json-server
 ```
+Vamos utilizar o Json Server para simular uma api no frontend já que esse projeto não tem um back end.

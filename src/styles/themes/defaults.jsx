@@ -1,7 +1,7 @@
 export const defaultTheme = {
     colors: {
       white: '#FFFFFF',
-      background: '#000000',
+      background: '#FAFAFA',
       'base-card': '#F3F2F2',
       'base-input': '#EDEDED',
       'base-button': '#E6E6E5',
