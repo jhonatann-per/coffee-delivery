@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom'; // Remova o BrowserRouter daqui
+import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 
 export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* Adicione outras rotas aqui, se necessário */}
+      
     </Routes>
   );
 };
