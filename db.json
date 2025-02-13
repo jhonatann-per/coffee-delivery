@@ -3,30 +3,66 @@
         {
             "id": 1,
             "nome": "Expresso Tradicional",
-            "descricao":"O tradicional café feito com água quente e grãos moídos",
+            "descricao": "O tradicional café feito com água quente e grãos moídos",
             "preco": 9.90,
-            "tags": ["Tradicional"]
+            "tags": ["Tradicional"],
+            "imagem": "/tradicional.svg"
         },
         {
             "id": 2,
             "nome": "Expresso Americano",
-            "descricao":"Expresso diluído, menos intenso que o tradicional",
+            "descricao": "Expresso diluído, menos intenso que o tradicional",
             "preco": 9.90,
-            "tags": ["Tradicional", "Com Leite"]
+            "tags": ["Tradicional", "Com Leite"],
+            "imagem": "/expresso.svg"
         },
         {
             "id": 3,
             "nome": "Expresso Cremoso",
-            "descricao":"Café expresso tradicional com espuma cremosa",
+            "descricao": "Café expresso tradicional com espuma cremosa",
             "preco": 9.90,
-            "tags": ["Tradicional", "Cremoso"]
+            "tags": ["Tradicional", "Cremoso"],
+            "imagem": "/cremoso.svg"
         },
         {
             "id": 4,
             "nome": "Expresso Gelado",
-            "descricao":"Bebida preparada com café expresso e cubos de gelo",
+            "descricao": "Bebida preparada com café expresso e cubos de gelo",
             "preco": 9.90,
-            "tags": ["Gelado", "Cremoso"]
+            "tags": ["Gelado", "Cremoso"],
+            "imagem": "/gelado.svg"
+        },
+        {
+            "id": 5,
+            "nome": "Expresso Tradicional",
+            "descricao": "O tradicional café feito com água quente e grãos moídos",
+            "preco": 9.90,
+            "tags": ["Tradicional"],
+            "imagem": "/tradicional.svg" 
+        },
+        {
+            "id": 6,
+            "nome": "Expresso Americano",
+            "descricao": "Expresso diluído, menos intenso que o tradicional",
+            "preco": 9.90,
+            "tags": ["Tradicional", "Com Leite"],
+            "imagem": "/expresso.svg"
+        },
+        {
+            "id": 7,
+            "nome": "Expresso Cremoso",
+            "descricao": "Café expresso tradicional com espuma cremosa",
+            "preco": 9.90,
+            "tags": ["Tradicional", "Cremoso"],
+            "imagem": "/cremoso.svg"
+        },
+        {
+            "id": 8,
+            "nome": "Expresso Gelado",
+            "descricao": "Bebida preparada com café expresso e cubos de gelo",
+            "preco": 9.90,
+            "tags": ["Gelado", "Cremoso"],
+            "imagem": "/gelado.svg"
         }
     ]
 }

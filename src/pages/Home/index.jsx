@@ -26,7 +26,7 @@ export const Home = () => {
                             Encontre o café perfeito <br></br>para qualquer hora do dia
                         </strong>
                         <span>
-                            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
+                            Com o Coffee Delivery você recebe seu café onde estiver,<br></br> a qualquer hora
                         </span>
                     </header>
                     <section>

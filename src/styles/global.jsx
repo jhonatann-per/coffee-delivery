@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { mixFonts } from './mixFonts'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -11,5 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, textarea, button {
+    ${mixFonts.fonts.textM};
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
   }
 `

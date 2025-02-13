@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mixFonts } from "../../styles/mixFonts";
 
 export const Container = styled.div`
     max-width: 72.5rem;
@@ -9,8 +10,8 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Baloo2', sans-serif;
 `;
+
 export const HomeContent = styled.div`
     display: flex;
     width: 100%;
@@ -26,17 +27,24 @@ export const Presentation = styled.article`
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        strong {
+            ${mixFonts.fonts.titleXL}
+            color: ${({ theme }) => theme.colors['base-title']}
+        }
+
+        span {
+            ${mixFonts.fonts.textL}
+        }
     }
-    strong {
-        font-size: 3rem;
-       
-    }
+
+    
 
     section{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
-        margin-top: 6rem;
+        margin-top: 4.5rem;
     }
     
     div {

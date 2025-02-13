@@ -15,3 +15,6 @@ npm install @phosphor-icons/react
 npm install -g json-server
 ```
 Vamos utilizar o Json Server para simular uma api no frontend já que esse projeto não tem um back end.
+Comando para iniciar o Json Server: 
+
+### json-server --watch db.json --port 3001
