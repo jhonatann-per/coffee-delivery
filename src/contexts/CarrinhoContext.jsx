@@ -19,6 +19,10 @@ const salvarCarrinhoNoLocalStorage = (carrinho) => {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
 };
 
+const formateValue = (valor) => new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+}).format(valor);
 
 
 export const CarrinhoProvider = ({ children }) => {
@@ -62,9 +66,10 @@ export const CarrinhoProvider = ({ children }) => {
     });
   };
 
+  
 
   return (
-    <CarrinhoContext.Provider value={{ itens, totalPreco, adicionarItem, removerItem }}>
+    <CarrinhoContext.Provider value={{ itens, totalPreco, adicionarItem, removerItem, formateValue }}>
       {children}
     </CarrinhoContext.Provider>
   );
