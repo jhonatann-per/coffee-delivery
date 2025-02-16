@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, CoffeesVitrines, Tags, SelectContent } from "./styles";
 import { useCarrinho } from "../../contexts/CarrinhoContext";
-import { Minus, Plus } from '@phosphor-icons/react'
+import { Minus, Plus, ShoppingCart} from '@phosphor-icons/react'
 
 
 export const CardsCoffees = () => {
   const [coffees, setCoffees] = useState([]);
   const { itens, totalPreco, adicionarItem, removerItem, formateValue } = useCarrinho();
+  
 
   useEffect(() => {
     axios
@@ -46,8 +47,8 @@ export const CardsCoffees = () => {
                     <span key={tag}>{tag}</span>
                   ))}
                 </Tags>
-                <h2>{coffee.nome}</h2>
-                <p>{coffee.descricao}</p>
+                  <h2>{coffee.nome}</h2>
+                  <p>{coffee.descricao}</p>
                 <SelectContent>
                     <h2>{formateValue(coffee.preco)}</h2>
                     <div>
@@ -55,6 +56,9 @@ export const CardsCoffees = () => {
                       <span>{quantidade}</span>
                       <button onClick={() => adicionarItem(coffee)}><Plus size={14} /></button>
                     </div>
+                    
+                    <button><ShoppingCart size={22} weight="fill"/></button>
+                    
                 </SelectContent>
               </div>
               

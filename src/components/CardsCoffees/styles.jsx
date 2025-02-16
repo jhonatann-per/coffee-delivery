@@ -36,14 +36,14 @@ export const CoffeesVitrines = styled.div`
     border-radius: 5px 20px 5px 20px;
 
     h2 {
-        padding: 10px;
+        padding: 8px 1rem;
         font-size: ${mixFonts.fonts.titleS}
     }
     p {
         text-align: center;
-        font-size: ${mixFonts.fonts.text};
+        font-size: ${mixFonts.fonts.textS};
         color: ${({theme}) => theme.colors['base-label']};
-        padding: 10px;
+        padding: 8px 1rem;
     }
     
 `
@@ -67,12 +67,15 @@ export const Tags = styled.div`
     }
 `;
 
+
+
 export const SelectContent = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    
 
     div{
         display: flex;
@@ -80,13 +83,23 @@ export const SelectContent = styled.div`
         justify-content: center;
         width: 5rem;
         background: ${({theme}) => theme.colors['base-button']};
-        padding: 0.5rem;
+        height: 38px;
         border-radius: 5px;
         gap: 0.65rem;
+
+        button {
+            background: ${({theme}) => theme.colors['base-button']};
+            color: ${({theme}) => theme.colors.purple}
+        }
     }
 
     button {
-        background: ${({theme}) => theme.colors['base-button']};
-        color: ${({theme}) => theme.colors.purple}
+        background: ${({theme}) => theme.colors['purple-dark']};
+        border-radius: 5px;
+        width: 38px;
+        height: 38px;
+        color: white;
     }
+
+    
 `;
