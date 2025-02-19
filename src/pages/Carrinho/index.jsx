@@ -1,4 +1,4 @@
-import { Container, EnderecoForm, PedidoContent } from "./styles"
+import { Container, EnderecoForm, PedidoContent, TotalValues,FormDiv } from "./styles"
 
 export const Carrinho = () => {
     return(
@@ -10,15 +10,18 @@ export const Carrinho = () => {
                         <p>Endereço de Entrega</p>
                         <span>Informe o endereço onde deseja receber seu pedido</span>
                     </div>
-                    <form>
-                            <input type="number" name="cep" placeholder="CEP" />
-                            <input type="text" name="rua" placeholder="Rua" />
-                            <input type="number" name="numero" placeholder="Número" />
-                            <input type="text" name="complemento" placeholder="Complemento" />
-                            <input type="text" name="bairro" placeholder="Bairro" />
-                            <input type="text" name="cidade" placeholder="Cidade" />
-                            <input type="text" name="uf" placeholder="UF" />
-                    </form>
+                    <FormDiv>
+                        <form>
+                                <input type="number" name="cep" placeholder="CEP" />
+                                <input type="text" name="rua" placeholder="Rua" />
+                                <input type="number" name="numero" placeholder="Número" />
+                                <input type="text" name="complemento" placeholder="Complemento" />
+                                <input type="text" name="bairro" placeholder="Bairro" />
+                                <input type="text" name="cidade" placeholder="Cidade" />
+                                <input type="text" name="uf" placeholder="UF" />
+                        </form>
+                    </FormDiv>
+                    
                 </section>
                 <article>
                     <p>Pagamento</p>
@@ -36,7 +39,7 @@ export const Carrinho = () => {
                 <header>Cafés selecionados</header>
                 <section>
                     <div>Produtos do carrinho</div>
-                    <div>
+                    <TotalValues>
                         <div>
                             <p>Total de itens</p>
                         </div>
@@ -46,7 +49,7 @@ export const Carrinho = () => {
                         <div>
                             <strong>Total</strong>
                         </div>
-                    </div>
+                    </TotalValues>
                     <button>Confirmar pedido</button>
                 </section>
             </PedidoContent>
