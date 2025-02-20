@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mixFonts } from "../../styles/mixFonts";
 
 export const Container = styled.div`
     max-width: 72.5rem;
@@ -32,6 +33,13 @@ export const EnderecoForm = styled.div`
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+
+            p{
+                ${mixFonts.fonts.textM}
+            }
+            span{
+                ${mixFonts.fonts.textS}
+            }
         }
 
     }
@@ -52,11 +60,12 @@ export const FormDiv = styled.div`
     form {
             display: grid;
             grid-template-columns: repeat(3, minmax(100px, 1fr));
-        
+            gap: 16px;
+
             input:nth-child(1) {
                 grid-column: 1 / span 1;
                 height:2.5rem;
-                margin-bottom: 16px;
+               
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -66,7 +75,6 @@ export const FormDiv = styled.div`
             input:nth-child(2) {
                 grid-column: 1 / span 3;
                 height:2.5rem;
-                margin-bottom: 16px;
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -76,7 +84,6 @@ export const FormDiv = styled.div`
             input:nth-child(3) {
                 grid-column: 1 / span 1;
                 height:2.5rem;
-                margin-bottom: 16px;
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -86,7 +93,6 @@ export const FormDiv = styled.div`
             input:nth-child(4) {
                 grid-column: 2 / span 2;
                 height:2.5rem;
-                margin-bottom: 16px;
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -96,7 +102,6 @@ export const FormDiv = styled.div`
             input:nth-child(5) {
                 grid-column: 1 / span 1;
                 height:2.5rem;
-                margin-bottom: 16px;
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -106,7 +111,6 @@ export const FormDiv = styled.div`
             input:nth-child(6) {
                 grid-column: 2 / span 1;
                 height:2.5rem;
-                margin-bottom: 16px;
                 border-radius: 4px;
                 padding-left: 1rem;
                 border: 1px solid ${({theme}) => theme.colors['base-input']};
@@ -131,16 +135,27 @@ export const PedidoContent = styled.div`
         
         
         section {
-            width: 28rem;
+            width: 100%;
             height: 498px;
             background-color: ${({theme}) => theme.colors['base-card']};
             border-radius: 4px;
             padding: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
         }
        
 `;
 
 export const TotalValues = styled.div`
+  
     height: 92px;
-    width: 23rem;
+    width: 100%;
+
+    div {
+        display: flex;
+        flex-direction: row;
+    }
 `;

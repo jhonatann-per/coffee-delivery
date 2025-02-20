@@ -20,12 +20,14 @@ export const Header = () => {
                     <MapPin size={22} weight="fill" />
                     <span>Porto Alegre, RS</span>
                 </div>
-                <Link>
-                    <ShoppingCart size={22} weight="fill"/>
-                    {quantidadeItens > 0 && (
-                        <span>{quantidadeItens}</span>
-                    )}
-                </Link>
+                <button>
+                    <Link to="/carrinho">
+                            <ShoppingCart size={22} weight={'fill'} style={{color: '#C47F17'}}/>
+                            {quantidadeItens > 0 && (
+                                <strong>{quantidadeItens}</strong>
+                            )}
+                    </Link>
+                </button>
             </Aside>
 
         </Container>

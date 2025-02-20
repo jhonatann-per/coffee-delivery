@@ -17,11 +17,49 @@ export const Aside = styled.aside`
     gap: 12px;
     align-items: center;
     justify-content: center;
-   
+    
     
     div {
         display: flex;
         justify-content: center;
         align-items: center;
+        color: ${({theme}) => theme.colors['purple']};
+        background-color: ${({theme}) => theme.colors['purple-light']};
+        padding: 0.5rem;
+        border-radius: 4px;
+        height: 38px;
     }
+
+    button {
+  width: 2.375rem;
+  height: 38px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  background: ${({theme}) => theme.colors['yellow-light']};
+  color: ${({theme}) => theme.colors['yellow-dark']};
+  position: relative; 
+
+  strong {
+    background: ${({theme}) => theme.colors['yellow-dark']};
+    color: white;
+    text-decoration: none;
+    position: absolute; 
+    top: -15px;
+    right: -12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%; 
+    z-index: 1;
+  }
+}
+
+
+    
+    
 `;
+
