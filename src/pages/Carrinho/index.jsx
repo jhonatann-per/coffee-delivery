@@ -1,20 +1,22 @@
-import { Container, EnderecoForm, PedidoContent, TotalValues, FormDiv } from "./styles";
-import { MapPin, Trash } from '@phosphor-icons/react';
+import { Container, EnderecoForm, PedidoContent, TotalValues, FormDiv, CardItens, HeaderLocation, ButtonQuatitDiv } from "./styles";
+import { MapPin, Minus, Plus,Trash } from '@phosphor-icons/react';
 import { useCarrinho } from '../../contexts/CarrinhoContext';
 
 export const Carrinho = () => {
-  const { itens, removerItem, formateValue } = useCarrinho();
+  const { itens, removerItem, adicionarItem, formateValue, totalPreco } = useCarrinho();
 
   return (
     <Container>
       <EnderecoForm>
         <header>Complete seu pedido</header>
         <section>
-          <div>
-            <MapPin size={22} />
-            <p>Endereço de Entrega</p>
-            <span>Informe o endereço onde deseja receber seu pedido</span>
-          </div>
+          <HeaderLocation>
+            <MapPin size={22} color={'#C47F17'} style={{borderBottom:'2px solid #C47F17'}}/>
+            <div>
+              <p>Endereço de Entrega</p>
+              <span>Informe o endereço onde deseja receber seu pedido</span>
+            </div>
+          </HeaderLocation>
           <FormDiv>
             <form>
               <input type="number" name="cep" placeholder="CEP" />
@@ -41,24 +43,48 @@ export const Carrinho = () => {
       <PedidoContent>
         <header>Cafés selecionados</header>
         <section>
-          <TotalValues>
+          <CardItens>
             {itens.length === 0 ? (
               <p>O carrinho está vazio.</p>
             ) : (
               itens.map((item, index) => (
                 <div key={index}>
                   <img src={item.imagem} alt={`Copo de ${item.nome}`} />
-                  <h3>{item.nome}</h3>
-                  <p>Quantidade: {item.quantidade}</p>
-                  <strong>Total: {formateValue(item.preco * item.quantidade)}</strong>
-                  <button onClick={() => removerItem(item.id)}>
-                    <Trash size={16} /> Remover
-                  </button>
+                  <div>
+                    <h3>{item.nome}</h3>
+                    <ButtonQuatitDiv>
+                      <button><Plus size={14} /></button>
+                      <span>{item.quantidade}</span>
+                      <button onClick={() => removerItem(item.id)}>
+                        <Minus size={14} />
+                      </button>
+                    </ButtonQuatitDiv>
+                      <div>
+                        <button>
+                          <Trash size={22} weight="fill"/>
+                        </button>
+                      </div>
+                  </div>
                 </div>
               ))
             )}
-          </TotalValues>
-          <button>Confirmar pedido</button>
+          </CardItens>
+          
+          <TotalValues>
+            <div>
+              <p>Total de itens:</p>
+              <p>{formateValue(totalPreco)}</p>
+            </div>
+            <div>
+              <p>Entrega:</p>
+              <span>Calcular</span>
+            </div>
+            <div>
+              <strong>Total:</strong>
+              <strong>{formateValue(totalPreco)}</strong>
+            </div>
+        </TotalValues>
+        <button>Confirmar pedido</button>
         </section>
         
       </PedidoContent>

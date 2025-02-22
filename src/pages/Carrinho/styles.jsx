@@ -27,22 +27,10 @@ export const EnderecoForm = styled.div`
         display: flex;
         flex-direction: column;
        
-        div {
-            width: 100%;
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            p{
-                ${mixFonts.fonts.textM}
-            }
-            span{
-                ${mixFonts.fonts.textS}
-            }
-        }
+        
 
     }
+
 
     article {
         width: 100%;
@@ -53,9 +41,31 @@ export const EnderecoForm = styled.div`
     }
 `;
 
+export const HeaderLocation = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    div {
+        width: 100%;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        p{
+            ${mixFonts.fonts.textM}
+        }
+        span{
+            ${mixFonts.fonts.textS}
+        }
+        }
+`;
+
 export const FormDiv = styled.div`
     max-width: 35rem;
     display: flex;
+    margin-top: 1rem;
 
     form {
             display: grid;
@@ -132,13 +142,14 @@ export const PedidoContent = styled.div`
         display: flex;
         flex-direction: column;
         gap: 16px;
-        
-        
+        width: 32rem;
+        height: 498px;
+
         section {
             width: 100%;
-            height: 498px;
+            border-radius: 5px 25px 5px 25px ;
             background-color: ${({theme}) => theme.colors['base-card']};
-            border-radius: 4px;
+            
             padding: 5rem;
             display: flex;
             align-items: center;
@@ -149,8 +160,40 @@ export const PedidoContent = styled.div`
        
 `;
 
+export const CardItens = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    div{
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        
+
+        transition: all 0.2s;
+
+        &:hover {
+        background-color: ${({ theme }) => theme.colors['base-hover']};
+        }
+    }
+`;
+
+export const ButtonQuatitDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    width: 5.6rem;
+    height: 2rem;
+    background-color: ${({ theme }) => theme.colors['base-button']};
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+`;
 export const TotalValues = styled.div`
-  
     height: 92px;
     width: 100%;
 
