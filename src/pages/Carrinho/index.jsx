@@ -1,5 +1,10 @@
-import { Container, EnderecoForm, PedidoContent, TotalValues, FormDiv, CardItens, HeaderLocation, ButtonQuatitDiv } from "./styles";
-import { MapPin, Minus, Plus,Trash } from '@phosphor-icons/react';
+import { Container, EnderecoForm, PedidoContent, TotalValues, FormDiv, CardItens, RemoveItem, CoffeesAddeds, HeaderLocation, ItemQuatitDiv, PaymentHeader, OptionPayment} from "./styles";
+import { 
+  MapPin, 
+  Minus, Plus, Trash, Bank,
+  CreditCard,
+  CurrencyDollar,
+  Money } from '@phosphor-icons/react';
 import { useCarrinho } from '../../contexts/CarrinhoContext';
 
 export const Carrinho = () => {
@@ -30,13 +35,28 @@ export const Carrinho = () => {
           </FormDiv>
         </section>
         <article>
-          <p>Pagamento</p>
-          <span>O pagamento é feito na entrega. Escolha a forma que deseja pagar</span>
-          <div>
-            <button>Cartão de crédito</button>
-            <button>Cartão de crédito</button>
-            <button>Cartão de crédito</button>
-          </div>
+          <PaymentHeader>
+              <CurrencyDollar color={"#8047F8"} size={22} />
+              <div>
+                <p> Pagamento</p>
+                <span>O pagamento é feito na entrega. Escolha a forma que deseja pagar</span>
+              </div>
+          </PaymentHeader>
+          
+          <OptionPayment>
+            <button>
+              <CreditCard color={"#8047F8"} size={16} />
+              <span>Cartão de crédito</span>
+            </button>
+            <button>
+              <Bank color={"#8047F8"} size={16} />
+              <span>Cartão de Débito</span>
+            </button>
+            <button>
+              <Money color={"#8047F8"} size={16} />
+              <span>Dinheiro</span>
+            </button>
+          </OptionPayment>
         </article>
       </EnderecoForm>
 
@@ -48,24 +68,28 @@ export const Carrinho = () => {
               <p>O carrinho está vazio.</p>
             ) : (
               itens.map((item, index) => (
-                <div key={index}>
-                  <img src={item.imagem} alt={`Copo de ${item.nome}`} />
-                  <div>
-                    <h3>{item.nome}</h3>
-                    <ButtonQuatitDiv>
-                      <button><Plus size={14} /></button>
-                      <span>{item.quantidade}</span>
-                      <button onClick={() => removerItem(item.id)}>
-                        <Minus size={14} />
-                      </button>
-                    </ButtonQuatitDiv>
-                      <div>
-                        <button>
-                          <Trash size={22} weight="fill"/>
-                        </button>
-                      </div>
+                <CoffeesAddeds key={index}>
+                  <img src={item.imagem} style={{width: '60px', height: '60px'}} alt={`Copo de ${item.nome}`} />
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <header>
+                      <h3>{item.nome}</h3> 
+                      <strong>{formateValue(item.quantidade * item.preco)}</strong>
+                    </header>
+                    <div style={{ display: 'flex', flexDirection: 'row', gap: '0.7rem'}}>
+                      <ItemQuatitDiv>
+                        <button onClick={() => removerItem(item.id)}><Minus size={14} /></button>  
+                        <span>{item.quantidade}</span>
+                        <button onClick={() => adicionarItem(item)}><Plus size={14} /></button>                   
+                      </ItemQuatitDiv>
+                      <RemoveItem>
+                          <button>
+                            <Trash size={18} />
+                            <span>REMOVER</span>
+                          </button>
+                      </RemoveItem>
+                    </div>
                   </div>
-                </div>
+                </CoffeesAddeds>
               ))
             )}
           </CardItens>
@@ -83,10 +107,12 @@ export const Carrinho = () => {
               <strong>Total:</strong>
               <strong>{formateValue(totalPreco)}</strong>
             </div>
-        </TotalValues>
-        <button>Confirmar pedido</button>
+
+            <footer>
+              <button>CONFIRMAR PEDIDO</button>
+            </footer>
+          </TotalValues>
         </section>
-        
       </PedidoContent>
     </Container>
   );

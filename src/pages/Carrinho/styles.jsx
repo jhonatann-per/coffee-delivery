@@ -16,7 +16,6 @@ export const EnderecoForm = styled.div`
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        
     
     section {
         width: 100%;
@@ -31,15 +30,66 @@ export const EnderecoForm = styled.div`
 
     }
 
-
     article {
         width: 100%;
         height: 207px;
         background-color: ${({theme}) => theme.colors['base-card']};
         border-radius: 4px;
-        padding: 5rem;
+        padding: 2rem;
+
+        
+       
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: ${({ theme }) => theme.colors['base-button']};
+            width: 11.1rem;
+            height: 2.87rem;
+            border-radius: 6px;
+            color: ${({ theme }) => theme.colors['base-text']};
+            ${mixFonts.fonts.buttonS}
+        }
+    }
+
+    header {
+        ${mixFonts.fonts.titleXS}
     }
 `;
+
+export const OptionPayment = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+`;
+
+export const PaymentHeader = styled.header`
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    div{
+        width: 100%;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        p{
+            ${mixFonts.fonts.textM}
+        }
+        span{
+           
+            ${mixFonts.fonts.textS}
+        }
+    }
+       
+        
+`
+    
 
 export const HeaderLocation = styled.div`
     display: flex;
@@ -157,6 +207,9 @@ export const PedidoContent = styled.div`
             flex-direction: column;
             gap: 2rem;
         }
+        header {
+            ${mixFonts.fonts.titleXS}
+        }
        
 `;
 
@@ -164,23 +217,58 @@ export const CardItens = styled.div`
     display: flex;
     flex-direction: column;
 
-    div{
-        display: flex;
-        flex-direction: row;
-    }
-
     button {
-        
-
+        display: flex;
         transition: all 0.2s;
+        background-color: transparent;
+        text-align: center;
+        padding: 0.25rem;
+        color: ${({theme}) => theme.colors['purple']};
+            &:hover {
+                background-color: ${({ theme }) => theme.colors['base-hover']};
+            }
+    }
+`;
 
-        &:hover {
-        background-color: ${({ theme }) => theme.colors['base-hover']};
+export const CoffeesAddeds = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid ${({theme}) => theme.colors['base-border']};
+    height:120px;
+    width: 22.5rem;
+    gap: 1rem;
+
+    h3{
+        ${mixFonts.fonts.textM}
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        
+        span{
+            ${mixFonts.fonts.textM}
         }
     }
 `;
 
-export const ButtonQuatitDiv = styled.div`
+export const ItemQuatitDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    width: 4.5rem;
+    height: 2rem;
+    background-color: ${({ theme }) => theme.colors['base-button']};
+    
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+`;
+
+export const RemoveItem = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -189,10 +277,13 @@ export const ButtonQuatitDiv = styled.div`
     height: 2rem;
     background-color: ${({ theme }) => theme.colors['base-button']};
     border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+
+    span{
+        font-size: 13px;
+        color: ${({ theme }) => theme.colors['base-text']};
+    }
 `;
+
 export const TotalValues = styled.div`
     height: 92px;
     width: 100%;
@@ -200,5 +291,21 @@ export const TotalValues = styled.div`
     div {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        height: 3.5rem;
+        width: 100%;
+        button{
+            background-color: ${({ theme }) => theme.colors['yellow']};
+            width: 100%;
+            height: 2.87rem;
+            border-radius: 6px;
+            color: white;
+            ${mixFonts.fonts.buttonG}
+        }
     }
 `;
