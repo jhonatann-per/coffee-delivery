@@ -9,7 +9,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
-
+    margin-bottom: 7rem;
     header {
         width: 100%;
     }
@@ -74,7 +74,7 @@ export const SelectContent = styled.div`
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     
 
     div{
@@ -85,7 +85,6 @@ export const SelectContent = styled.div`
         background: ${({theme}) => theme.colors['base-button']};
         height: 38px;
         border-radius: 5px;
-        gap: 0.65rem;
 
         button {
             background: ${({theme}) => theme.colors['base-button']};

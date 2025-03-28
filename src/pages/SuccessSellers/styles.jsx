@@ -9,6 +9,10 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    header {
+        margin-bottom: 2rem;
+    }
+
 `;
 
 export const OrderInformation = styled.div`
@@ -16,15 +20,22 @@ export const OrderInformation = styled.div`
     flex-direction: column;
     gap: 2rem;
     padding: 2.5rem;
-    background-color: ${(props) => props.theme["base-card"]};
     border-radius: 6px 36px 6px 36px;
     width: 32.875rem;
-    border: 1px solid ${(props) => props.theme["yellow-light"]};
-
+    height: 16.875rem;
+    background-color: white;
+    
     div {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        width: 100%;
+        
+
+        section{
+            gap: 0.5rem;
+            display: flex;
+            flex-direction: row;
+        }
 
         span {
             font-size: ${(props) => props.theme["text-m"]};
@@ -32,8 +43,20 @@ export const OrderInformation = styled.div`
         }
 
         p {
+            width:auto;
             font-size: ${(props) => props.theme["text-m"]};
             color: ${(props) => props.theme["base-text"]};
         }
     }
+`;
+
+export const Info = styled.div`
+    border: 1px solid;
+    border-radius: 6px 36px;
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+    background-origin: border-box;
+    background-image: ${({ theme }) =>
+    `linear-gradient(to bottom right, ${theme.colors.yellow}, ${theme.colors.purple})`};
 `;

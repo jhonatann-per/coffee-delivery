@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { Container, CoffeesVitrines, Tags, SelectContent } from "./styles";
 import { useCarrinho } from "../../contexts/CarrinhoContext";
 import { Minus, Plus, ShoppingCart} from '@phosphor-icons/react'
+import { Link } from "react-router-dom";
 
 
 export const CardsCoffees = () => {
   const [coffees, setCoffees] = useState([]);
-  const { itens, totalPreco, adicionarItem, removerItem, formateValue } = useCarrinho();
+  const { itens, adicionarItem, removerItem, formateValue } = useCarrinho();
   
 
   useEffect(() => {
@@ -56,8 +57,9 @@ export const CardsCoffees = () => {
                       <span>{quantidade}</span>
                       <button onClick={() => adicionarItem(coffee)}><Plus size={14} /></button>
                     </div>
-                    
-                    <button><ShoppingCart size={22} weight="fill"/></button>
+                    <Link to="/carrinho">
+                      <button><ShoppingCart size={22} weight="fill"/></button>
+                    </Link>
                     
                 </SelectContent>
               </div>
@@ -66,10 +68,6 @@ export const CardsCoffees = () => {
           );
         })}
       </section>
-
-      <footer>
-        <h2>Total do Carrinho: R$ {formateValue(totalPreco)}</h2>
-      </footer>
     </Container>
   );
 };

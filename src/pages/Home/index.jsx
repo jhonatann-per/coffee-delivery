@@ -43,7 +43,6 @@ export const Home = () => {
                 <CoffeeImg>
                     <img src={ImgCoffee} alt="Copo de Café e grãos" />
                 </CoffeeImg>
-
             </HomeContent>
             
             <CardsCoffees />
