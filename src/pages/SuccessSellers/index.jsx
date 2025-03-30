@@ -1,4 +1,4 @@
-import { Container, OrderInformation, Info } from "./styles";
+import { Container, OrderInformation, Info, Endereco, PrevisaoDeEntrega, MethodPayment, CircleIcon } from "./styles";
 import Entregador from "../../assets/Entregador.svg";
 import { useEndereco } from "../../contexts/EnderecoContext";
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react';
@@ -28,30 +28,41 @@ export const SuccessSellers = () => {
                 </header>
                 <Info>
                     <OrderInformation>
-                        <div>
-                        <MapPin />
+                        
+                            
+                    <Endereco>
+                        <CircleIcon bgColor="#8047F8"><MapPin size={28}/></CircleIcon>
+                        <article>
                             <section>
                                 <span>Entrega em</span>
                                 <p>
-                                    {endereco.rua}, {endereco.numero}
+                                {endereco.rua}, {endereco.numero}
                                 </p>
                                 <strong>Rua {endereco.rua}</strong>
                             </section>
-                            <p>{endereco.bairro} - {endereco.cidade}, {endereco.uf}</p>
-                        </div>
-                        <div>
-                        <Timer />
+                            <section>
+                                <p>{endereco.bairro} - {endereco.cidade}, {endereco.uf}</p>
+                            </section>
+                        </article>
+                    </Endereco>
+                            
+                    <PrevisaoDeEntrega>
+                        <CircleIcon bgColor="#DBAC2C"><Timer size={28}/></CircleIcon>
+                        <article>
                             <span>Previsão de entrega</span>
                             <strong>20 min - 30 min</strong>
-                        </div>
-                        <div>
-                        <CurrencyDollar size={32} />
+                        </article>
+                    </PrevisaoDeEntrega>
+
+                    <MethodPayment>
+                        <CircleIcon bgColor="#C47F17"><CurrencyDollar size={28}/></CircleIcon>
+                        <article>
                             <span>Pagamento na entrega</span>
-                            <strong>{metodoPagamento}</strong> 
-                        </div>
+                            <strong>{metodoPagamento}</strong>
+                        </article>
+                    </MethodPayment>  
                     </OrderInformation>
                 </Info>
-                
             </section>
             <aside>
                 <img src={Entregador} alt="Entregador de moto" />

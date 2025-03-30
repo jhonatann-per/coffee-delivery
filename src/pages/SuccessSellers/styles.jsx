@@ -25,13 +25,25 @@ export const OrderInformation = styled.div`
     height: 16.875rem;
     background-color: white;
     
-    div {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+
         
 
-        section{
+       
+`;
+
+export const Endereco = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    div {
+        display:flex;
+        gap: 1rem;
+    }   
+
+    section{
             gap: 0.5rem;
             display: flex;
             flex-direction: row;
@@ -47,8 +59,35 @@ export const OrderInformation = styled.div`
             font-size: ${(props) => props.theme["text-m"]};
             color: ${(props) => props.theme["base-text"]};
         }
-    }
+   
 `;
+
+export const PrevisaoDeEntrega = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+`
+
+export const MethodPayment = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+
+`
 
 export const Info = styled.div`
     border: 1px solid;
@@ -60,3 +99,15 @@ export const Info = styled.div`
     background-image: ${({ theme }) =>
     `linear-gradient(to bottom right, ${theme.colors.yellow}, ${theme.colors.purple})`};
 `;
+
+export const CircleIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: ${(props) => props.bgColor || "#FFD700"};
+  border-radius: 50%; 
+  color: white;
+`;
+

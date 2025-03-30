@@ -48,7 +48,6 @@ export const CoffeesVitrines = styled.div`
     
 `
 
-
 export const Tags = styled.div`
     display: flex;
     align-items: center;
@@ -66,8 +65,6 @@ export const Tags = styled.div`
             color: ${({theme}) => theme.colors['yellow-dark']} 
     }
 `;
-
-
 
 export const SelectContent = styled.div`
     display: flex;

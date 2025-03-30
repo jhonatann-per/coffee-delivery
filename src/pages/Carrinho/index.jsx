@@ -88,7 +88,7 @@ export const Carrinho = () => {
 };
   
 
-  const isConfirmDisabled = !selectedPayment || !formData.cep;
+  const isConfirmDisabled = !selectedPayment || !formData.cep || itens.length === 0;
 
   return (
     <Container>

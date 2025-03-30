@@ -22,7 +22,6 @@ export const CardsCoffees = () => {
       });
   }, []);
 
-  // Calculando itemCarrinho e quantidade fora do return
   const getQuantidade = (coffee) => {
     const itemCarrinho = itens.find((item) => item.id === coffee.id);
     return itemCarrinho?.quantidade || 0;
