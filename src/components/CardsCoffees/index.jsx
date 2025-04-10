@@ -13,9 +13,10 @@ export const CardsCoffees = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/cafes")
+      .get("/db.json")
       .then((response) => {
-        setCoffees(response.data);
+        setCoffees(response.data.cafes);
+
       })
       .catch((error) => {
         console.error("Erro ao buscar dados:", error);
