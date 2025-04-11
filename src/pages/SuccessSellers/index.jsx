@@ -27,9 +27,7 @@ export const SuccessSellers = () => {
                     <p>Agora é só aguardar que logo o café chegará até você</p>
                 </header>
                 <Info>
-                    <OrderInformation>
-                        
-                            
+                    <OrderInformation>   
                     <Endereco>
                         <CircleIcon bgColor="#8047F8"><MapPin size={28}/></CircleIcon>
                         <article>

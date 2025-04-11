@@ -23,12 +23,7 @@ export const OrderInformation = styled.div`
     border-radius: 6px 36px 6px 36px;
     width: 32.875rem;
     height: 16.875rem;
-    background-color: white;
-    
-
-        
-
-       
+    background-color: white;     
 `;
 
 export const Endereco = styled.div`
